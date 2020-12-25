@@ -101,6 +101,31 @@ namespace Exercise2_073_Adiatsa_Putra_Santika
             textBox3.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
             textBox4.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var json = new WebClient().DownloadString("http://localhost:1907/Mahasiswa");
+            var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
+
+            string nim = textBox1.Text;
+            var item = data.Where(x => x.nim == textBox1.Text).FirstOrDefault();
+            if (item != null)
+            {
+                // update logger with your textboxes data
+                item.nama = textBox1.Text;
+                item.nim = textBox2.Text;
+                item.prodi = textBox3.Text;
+                item.angkatan = textBox4.Text;
+
+                // Save everything
+                string output = JsonConvert.SerializeObject(item, Formatting.Indented);
+                var postdata = new WebClient();
+                postdata.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+                string response = postdata.UploadString(baseUrl + "UpdateMahasiswa", output);
+                Console.WriteLine(response);
+                TampilData();
+            }
+        }
     }
 
     class ClassData
