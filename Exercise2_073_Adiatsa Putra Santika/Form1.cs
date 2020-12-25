@@ -27,6 +27,35 @@ namespace Exercise2_073_Adiatsa_Putra_Santika
 
         }
 
+        public class Mahasiswa
+        {
+            private string _nama, _nim, _prodi, _angkatan;
+            public string nama
+            {
+                get { return _nama; }
+                set { _nama = value; }
+            }
+
+            public string nim
+            {
+                get { return _nim; }
+                set { _nim = value; }
+            }
+
+            public string prodi
+            {
+                get { return _prodi; }
+                set { _prodi = value; }
+            }
+
+            public string angkatan
+            {
+                get { return _angkatan; }
+                set { _angkatan = value; }
+            }
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
 
