@@ -16,6 +16,7 @@ namespace Exercise2_073_Adiatsa_Putra_Santika
     public partial class Form1 : Form
     {
         string baseUrl = "http://localhost:1907/";
+
         public Form1()
         {
             InitializeComponent();
@@ -42,6 +43,39 @@ namespace Exercise2_073_Adiatsa_Putra_Santika
                 Console.WriteLine(response);
 
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var json = new WebClient().DownloadString("http://localhost:1907/Mahasiswa");
+            var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
+
+            if (MessageBox.Show("Are you sure you want to delete", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+                string nim = textBox1.Text;
+                var item = data.Where(x => x.nim == textBox1.Text).FirstOrDefault();
+                if (item != null)
+                {
+                    data.Remove(item);
+                    // Save everything
+                    string output = JsonConvert.SerializeObject(item, Formatting.Indented);
+                    var postdata = new WebClient();
+                    postdata.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+                    string response = postdata.UploadString(baseUrl + "DeleteMahasiswa", output);
+                    Console.WriteLine(response);
+                    TampilData();
+                }
+
+            }
+        }
+        public void TampilData()
+        {
+            var json = new WebClient().DownloadString("http://localhost:1907/Mahasiswa");
+            var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
+
+            dataGridView1.DataSource = data;
+
         }
     }
 
