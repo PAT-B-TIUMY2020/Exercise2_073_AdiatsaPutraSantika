@@ -37,12 +37,13 @@ namespace Exercise2_073_Adiatsa_Putra_Santika
             mhs.angkatan = textBox4.Text;
 
             var data = JsonConvert.SerializeObject(mhs);
-                var postdata = new WebClient();
-                postdata.Headers.Add(HttpRequestHeader.ContentType, "application/json");
-                string response = postdata.UploadString(baseUrl + "Mahasiswa", data);
-                Console.WriteLine(response);
+            var postdata = new WebClient();
+            postdata.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+            string response = postdata.UploadString(baseUrl + "Mahasiswa", data);
+            Console.WriteLine(response);
+            TampilData();
 
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -73,9 +74,32 @@ namespace Exercise2_073_Adiatsa_Putra_Santika
         {
             var json = new WebClient().DownloadString("http://localhost:1907/Mahasiswa");
             var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
-
             dataGridView1.DataSource = data;
+        }
 
+        public void SearchData()
+        {
+            var json = new WebClient().DownloadString("http://localhost:1907/Mahasiswa");
+            var data = JsonConvert.DeserializeObject<List<Mahasiswa>>(json);
+            string nim = textBox1.Text;
+            if (nim == null || nim == "")
+            {
+                dataGridView1.DataSource = data;
+            }
+            else
+            {
+                var item = data.Where(x => x.nim == textBox1.Text).ToList();
+
+                dataGridView1.DataSource = item;
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox1.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            textBox2.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+            textBox3.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[2].Value);
+            textBox4.Text = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
         }
     }
 
