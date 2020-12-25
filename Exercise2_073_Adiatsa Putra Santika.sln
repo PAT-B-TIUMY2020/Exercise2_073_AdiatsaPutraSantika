@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise2_073_Adiatsa Putra Santika", "Exercise2_073_Adiatsa Putra Santika\Exercise2_073_Adiatsa Putra Santika.csproj", "{0AC3B4A2-055C-43AE-B6CB-CD764B2B7897}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerCodeRest_073_Adiatsa Putra SAntika", "ServerCodeRest_073_Adiatsa Putra SAntika\ServerCodeRest_073_Adiatsa Putra SAntika.csproj", "{932AFA40-06DF-4A48-928B-DFAEA70EE023}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server_073_Adiatsa Putra Santika", "Server_073_Adiatsa Putra Santika\Server_073_Adiatsa Putra Santika.csproj", "{63B5F305-0DC0-4E4C-A4F6-5D6FBE48AB9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceRest_073_Adiatsa Putra Santika", "..\ServiceRest_073_Adiatsa Putra Santika\ServiceRest_073_Adiatsa Putra Santika\ServiceRest_073_Adiatsa Putra Santika.csproj", "{E73D5C11-CD16-416F-B72F-DFECC3E901E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,14 @@ Global
 		{0AC3B4A2-055C-43AE-B6CB-CD764B2B7897}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AC3B4A2-055C-43AE-B6CB-CD764B2B7897}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AC3B4A2-055C-43AE-B6CB-CD764B2B7897}.Release|Any CPU.Build.0 = Release|Any CPU
-		{932AFA40-06DF-4A48-928B-DFAEA70EE023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{932AFA40-06DF-4A48-928B-DFAEA70EE023}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{932AFA40-06DF-4A48-928B-DFAEA70EE023}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{932AFA40-06DF-4A48-928B-DFAEA70EE023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63B5F305-0DC0-4E4C-A4F6-5D6FBE48AB9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B5F305-0DC0-4E4C-A4F6-5D6FBE48AB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B5F305-0DC0-4E4C-A4F6-5D6FBE48AB9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B5F305-0DC0-4E4C-A4F6-5D6FBE48AB9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E73D5C11-CD16-416F-B72F-DFECC3E901E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E73D5C11-CD16-416F-B72F-DFECC3E901E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E73D5C11-CD16-416F-B72F-DFECC3E901E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E73D5C11-CD16-416F-B72F-DFECC3E901E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

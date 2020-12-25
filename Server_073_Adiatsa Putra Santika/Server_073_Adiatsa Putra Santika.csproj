@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0AC3B4A2-055C-43AE-B6CB-CD764B2B7897}</ProjectGuid>
+    <ProjectGuid>{63B5F305-0DC0-4E4C-A4F6-5D6FBE48AB9D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Exercise2_073_Adiatsa_Putra_Santika</RootNamespace>
-    <AssemblyName>Exercise2_073_Adiatsa Putra Santika</AssemblyName>
+    <RootNamespace>Server_073_Adiatsa_Putra_Santika</RootNamespace>
+    <AssemblyName>Server_073_Adiatsa Putra Santika</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,11 +33,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="ServiceRest_073_Adiatsa Putra Santika">
+      <HintPath>..\..\ServiceRest_073_Adiatsa Putra Santika\ServiceRest_073_Adiatsa Putra Santika\bin\Debug\ServiceRest_073_Adiatsa Putra Santika.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,7 +71,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -82,12 +83,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\ServiceRest_073_Adiatsa Putra Santika\ServiceRest_073_Adiatsa Putra Santika\ServiceRest_073_Adiatsa Putra Santika.csproj">
-      <Project>{E73D5C11-CD16-416F-B72F-DFECC3E901E7}</Project>
-      <Name>ServiceRest_073_Adiatsa Putra Santika</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

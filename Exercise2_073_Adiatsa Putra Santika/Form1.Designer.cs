@@ -133,6 +133,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "Tambah Data";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
